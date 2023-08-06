@@ -11,17 +11,12 @@ volumes:
 services:
   influxdb:
     image: influxdb:alpine
-    container_name: influxdb
+    env_file: configuration.env
     ports:
-      - "8086:8086"
-    networks:
-      - public
-      - private
+      - '8086:8086'
     volumes:
+      - ./:/imports
       - ./data/influxdb:/var/lib/influxdb
-    environment:
-      INFLUXDB_REPORTING_DISABLED: "true"
-      INFLUXDB_DB: influx
 
   grafana:
       image: grafana/grafana:latest
