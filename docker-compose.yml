@@ -23,35 +23,29 @@ services:
       INFLUXDB_REPORTING_DISABLED: "true"
       INFLUXDB_DB: telegraf
       INFLUXDB_USER: telegraf
-      INFLUXDB_USER_PASSWORD: nimda321
+      INFLUXDB_USER_PASSWORD: Andrew001
 
   grafana:
-      image: grafana/grafana:5.1.3
+      image: grafana/grafana:latest
       container_name: grafana
       ports:
-        - "3001:3000"
+        - "3000:3000"
       networks:
         - public
         - private
       volumes:
-        - grafana_lib:/var/lib/grafana
-#        - ${PWD}/grafana/privkey1.pem:/privkey1.pem:ro
-#        - ${PWD}/grafana/fullchain1.pem:/fullchain1.pem:ro
-        - ${PWD}/grafana/:/var/lib/grafana/ds/
+        - grafana:/var/lib/grafana
       environment:
         GF_AUTH_ANONYMOUS_ENABLED: "false"
-        GF_SECURITY_ADMIN_PASSWORD: "nimda321"
+        GF_SECURITY_ADMIN_PASSWORD: "Andrew001"
         GF_SECURITY_ADMIN_USER: "admin"
         GF_SERVER_PROTOCOL: "http"
-        GF_SERVER_DOMAIN: "sebson.ddns.net"
-#        GF_SERVER_CERT_FILE: "/fullchain1.pem"
-#        GF_SERVER_CERT_KEY: "/privkey1.pem"
         GF_SERVER_METRICS_ENABLED: "true"
         GF_SERVER_METRICS_INTERVAL_SECONDS: "10"
         INFLUXDB_URI: "http://influxdb:8086"
         INFLUXDB_DB: telegraf
         INFLUXDB_USER: telegraf
-        INFLUXDB_USER_PASSWORD: nimda321
+        INFLUXDB_USER_PASSWORD: Andrew001
         
   telegraf:
     image: telegraf:latest
@@ -60,24 +54,23 @@ services:
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
     environment:
-      # real influx host
       INFLUXDB_URI: "http://localhost:8086"
 
   prometheus:
-    image: quay.io/prometheus/prometheus:v2.0.0
+    image: prom/prometheus:latest
     container_name: prometheus
     volumes:
      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     networks:
      - private
-    command: "--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus"
+    command: "--storage.tsdb.path=/prometheus"
     ports:
      - 9091:9090
     depends_on:
      - node_exporter
 
   node_exporter:
-    image: prom/node-exporter:v0.13.0
+    image: prom/node-exporter
     container_name: node_exporter
     volumes:
       - ${PWD}/node_exporter/justrun.py:/justrun.py:rw
@@ -95,7 +88,7 @@ services:
       - 9101:9100
 
   cadvisor:
-    image: google/cadvisor:v0.28.3
+    image: google/cadvisor
     container_name: cadvisor
     volumes:
       - /:/rootfs:ro
