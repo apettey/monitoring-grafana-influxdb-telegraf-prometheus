@@ -30,7 +30,7 @@ datasources:
     url: http://influxdb:8086
     isDefault: true
     jsonData:
-      dbName: influxdb
+      dbName: influx
       httpMode: GET
     secureJsonData:
       password: admin
