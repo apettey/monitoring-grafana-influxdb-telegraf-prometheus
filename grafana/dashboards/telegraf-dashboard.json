@@ -8539,13 +8539,9 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "7002f29f18c5",
-          "value": "7002f29f18c5"
-        },
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P3C6603E967DC8568"
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
         },
         "definition": "",
         "hide": 0,
@@ -8554,19 +8550,22 @@
         "multi": false,
         "name": "server",
         "options": [],
-        "query": "SHOW TAG VALUES FROM system WITH KEY=host",
-        "refresh": 1,
+        "query": "",
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
-        "sort": 0,
-        "type": "query",
-        "useTags": false
+        "sort": 1,
+        "type": "query"
       },
       {
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "influxdb",
@@ -8589,9 +8588,13 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "influxdb",
@@ -8614,9 +8617,13 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "influxdb",
@@ -8639,9 +8646,13 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "influxdb",
