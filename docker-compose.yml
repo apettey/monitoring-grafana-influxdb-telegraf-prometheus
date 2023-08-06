@@ -52,6 +52,7 @@ services:
     networks:
       - public
       - private
+    network_mode: "host"
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
     environment:
