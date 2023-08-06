@@ -10,7 +10,7 @@ volumes:
 
 services:
   influxdb:
-    image: influxdb:alpine
+    image: influxdb:1.8-alpine
     env_file: configuration.env
     ports:
       - '8086:8086'
