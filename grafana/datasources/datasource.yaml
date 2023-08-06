@@ -25,7 +25,12 @@ datasources:
   - name: influxdb
     type: influxdb
     access: proxy
-    user: telegraf
+    user: admin
     orgId: 1
     url: http://influxdb:8086
     isDefault: true
+    jsonData:
+      dbName: influxdb
+      httpMode: GET
+    secureJsonData:
+      password: admin
