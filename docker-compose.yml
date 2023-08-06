@@ -54,7 +54,7 @@ services:
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
     environment:
-      INFLUXDB_URI: "http://localhost:8086"
+      INFLUXDB_URI: "http://influxdb:8086"
 
   prometheus:
     image: prom/prometheus:latest
