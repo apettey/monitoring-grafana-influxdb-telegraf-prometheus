@@ -10,6 +10,7 @@ volumes:
 
 services:
   influxdb:
+    container_name: influxdb
     image: influxdb:1.8
     env_file: configuration.env
     ports:
