@@ -11,7 +11,7 @@ volumes:
 services:
   influxdb:
     container_name: influxdb
-    image: influxdb:1.8
+    image: influxdb:1.11
     env_file: configuration.env
     ports:
       - '8086:8086'
