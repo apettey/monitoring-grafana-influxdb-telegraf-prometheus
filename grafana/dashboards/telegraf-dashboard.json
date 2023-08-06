@@ -8125,7 +8125,7 @@
   },
   "timezone": "browser",
   "title": "Telegraf: system dashboard",
-  "uid": "000000002",
+  "uid": "telegraf",
   "version": 2
 }
 

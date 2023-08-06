@@ -42,6 +42,7 @@
     }
   ],
   "id": null,
+  "uid": "docker-system",
   "title": "Docker and system monitoring",
   "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
   "tags": [],
@@ -222,7 +223,7 @@
   "annotations": {
     "list": []
   },
-  "refresh": "5m",
+  "refresh": "30s",
   "schemaVersion": 13,
   "version": 57,
   "links": [],
