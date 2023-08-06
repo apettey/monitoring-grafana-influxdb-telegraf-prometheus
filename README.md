@@ -9,6 +9,13 @@ This repository contains easily deployable monitoring solution which uses:
  - cAdvisor (containers monitoring)
  - alertmanager (alerting)
 
+# URLS
+
+`http://metrics:3000/d/telegraf/?orgId=1`
+`http://metrics:3000/d/docker-system/?orgId=1`
+`http://metrics:3000/d/nodeexporter/?orgId=1`
+`http://metrics:3000/d/prometheus/?orgId=1`
+
 
 # How to use it?
 
