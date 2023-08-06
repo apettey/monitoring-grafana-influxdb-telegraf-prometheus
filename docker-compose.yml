@@ -17,7 +17,7 @@ services:
       - public
       - private
     ports:
-      - '8086:8086'
+      - 8086:8086
     volumes:
       - ./:/imports
       - ./data/influxdb:/var/lib/influxdb
@@ -65,23 +65,22 @@ services:
      - private
     command: "--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus"
     ports:
-     - 9091:9090
+     - 9090:9090
     depends_on:
      - node_exporter
 
   node_exporter:
-    image: prom/node-exporter
+    image: quay.io/prometheus/node-exporter:latest
     container_name: node_exporter
+    command:
+      - '--path.rootfs=/host'
+    pid: host
+    restart: unless-stopped
     volumes:
-      - ${PWD}/node_exporter/justrun.py:/justrun.py:rw
-      - ${PWD}/node_exporter/hmon:/hmon:rw
-      - ${PWD}/node_exporter/smoothlogging:/smoothlogging:rw
-      - ${PWD}/node_exporter/textfile_collector:/var/lib/node_exporter/textfile_collector/
+      - '/:/host:ro,rslave'
     networks:
       - public
       - private
-    environment:
-      DOGSNAME:      "GULA,BODKA"
     expose:
       - 9100
     ports:
