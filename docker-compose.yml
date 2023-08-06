@@ -33,13 +33,13 @@ services:
       volumes:
         - ./grafana:/etc/grafana/provisioning/
       environment:
-        GF_AUTH_ANONYMOUS_ENABLED: "true"
+        GF_AUTH_ANONYMOUS_ENABLED: true
         GF_SECURITY_ADMIN_PASSWORD: "Andrew001"
         GF_SECURITY_ADMIN_USER: "admin"
         GF_SERVER_PROTOCOL: "http"
         GF_SERVER_METRICS_ENABLED: "true"
         GF_SERVER_METRICS_INTERVAL_SECONDS: "10"
-        GF_AUTH_BASIC_ENABLED: "false"
+        GF_AUTH_BASIC_ENABLED: false
         INFLUXDB_URI: "http://influxdb:8086"
         INFLUXDB_DB: influx
         
