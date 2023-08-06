@@ -15,6 +15,7 @@ datasources:
     type: prometheus
     # Access mode - proxy (server in the UI) or direct (browser in the UI).
     url: http://prometheus:9090
+    orgId: 1
     jsonData:
       httpMethod: POST
       manageAlerts: true
@@ -25,9 +26,6 @@ datasources:
     type: influxdb
     access: proxy
     user: telegraf
+    orgId: 1
     url: http://influxdb:8086
-    jsonData:
-      dbName: telegraf
-      httpMode: GET
-    secureJsonData:
-      password: grafana
+    isDefault: true
