@@ -36,7 +36,7 @@ services:
       volumes:
         - ./grafana:/var/lib/grafana:rw
       environment:
-        GF_AUTH_ANONYMOUS_ENABLED: "false"
+        GF_AUTH_ANONYMOUS_ENABLED: "true"
         GF_SECURITY_ADMIN_PASSWORD: "Andrew001"
         GF_SECURITY_ADMIN_USER: "admin"
         GF_SERVER_PROTOCOL: "http"
