@@ -50,6 +50,8 @@ services:
     networks:
       - public
       - private
+    depends_on:
+      - influxdb
     volumes:
       - ./telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     environment:
