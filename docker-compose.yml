@@ -34,7 +34,7 @@ services:
         - public
         - private
       volumes:
-        - ./grafana:/var/lib/grafana:rw
+        - ./grafana:/etc/grafana/provisioning/
       environment:
         GF_AUTH_ANONYMOUS_ENABLED: "true"
         GF_SECURITY_ADMIN_PASSWORD: "Andrew001"
@@ -42,6 +42,7 @@ services:
         GF_SERVER_PROTOCOL: "http"
         GF_SERVER_METRICS_ENABLED: "true"
         GF_SERVER_METRICS_INTERVAL_SECONDS: "10"
+        GF_AUTH_BASIC_ENABLED: "false"
         INFLUXDB_URI: "http://influxdb:8086"
         INFLUXDB_DB: telegraf
         INFLUXDB_USER: telegraf
