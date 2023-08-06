@@ -49,9 +49,6 @@ services:
   telegraf:
     image: telegraf:latest
     container_name: telegraf
-    networks:
-      - public
-      - private
     network_mode: "host"
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
