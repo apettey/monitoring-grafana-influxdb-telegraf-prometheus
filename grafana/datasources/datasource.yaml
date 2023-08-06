@@ -11,7 +11,7 @@ deleteDatasources:
 datasources:
   # <string, required> Sets the name you use to refer to
   # the data source in panels and queries.
-  - name: Prometheus
+  - name: prometheus
     type: prometheus
     # Access mode - proxy (server in the UI) or direct (browser in the UI).
     url: http://prometheus:9090
