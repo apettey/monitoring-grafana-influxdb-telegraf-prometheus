@@ -13,6 +13,9 @@ services:
     container_name: influxdb
     image: influxdb:1.11
     env_file: configuration.env
+    networks:
+      - public
+      - private
     ports:
       - '8086:8086'
     volumes:
