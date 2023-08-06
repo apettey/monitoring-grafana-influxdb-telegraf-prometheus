@@ -22,8 +22,6 @@ services:
     environment:
       INFLUXDB_REPORTING_DISABLED: "true"
       INFLUXDB_DB: telegraf
-      INFLUXDB_USER: telegraf
-      INFLUXDB_USER_PASSWORD: Andrew001
 
   grafana:
       image: grafana/grafana:latest
@@ -64,7 +62,7 @@ services:
      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     networks:
      - private
-    command: "--storage.tsdb.path=/prometheus"
+    command: "--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus"
     ports:
      - 9091:9090
     depends_on:

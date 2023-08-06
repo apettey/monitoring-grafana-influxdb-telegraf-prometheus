@@ -18,18 +18,16 @@ datasources:
     jsonData:
       httpMethod: POST
       manageAlerts: true
-      prometheusType: Prometheus
-      prometheusVersion: 2.44.0
       cacheLevel: 'High'
       disableRecordingRules: false
       incrementalQueryOverlapWindow: 10m
   - name: influxdb
     type: influxdb
     access: proxy
-    user: grafana
+    user: telegraf
     url: http://influxdb:8086
     jsonData:
-      dbName: site
+      dbName: telegraf
       httpMode: GET
     secureJsonData:
       password: grafana
